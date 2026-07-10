@@ -244,6 +244,8 @@ const (
 	GCP SegmentType = "gcp"
 	// GIT represents the git status and information
 	GIT SegmentType = "git"
+	// TODO add comment
+	GITLAB_CI = "gitlab_ci"
 	// GITVERSION represents the gitversion information
 	GITVERSION SegmentType = "gitversion"
 	// GOLANG writes which go version is currently active
@@ -441,6 +443,7 @@ var Segments = map[SegmentType]func() SegmentWriter{
 	FOSSIL:          func() SegmentWriter { return &segments.Fossil{} },
 	GCP:             func() SegmentWriter { return &segments.Gcp{} },
 	GIT:             func() SegmentWriter { return &segments.Git{} },
+	GITLAB_CI:       func() SegmentWriter { return &segments.GitlabCi{} },
 	GITVERSION:      func() SegmentWriter { return &segments.GitVersion{} },
 	GOLANG:          func() SegmentWriter { return &segments.Golang{} },
 	GRADLE:          func() SegmentWriter { return &segments.Gradle{} },
